@@ -40,6 +40,5 @@ def show(request):
    # for c in curriculum:
    #  result += c.name + '<br>'
    # return HttpResponse(result)
-   return render (request, 'show.html', 
-   {'data': curriculum}
-   )
+   return render(request, 'firstapp/show.html', 
+   {'data': curriculum})
