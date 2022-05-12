@@ -1,7 +1,7 @@
 from urllib import response
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Course
+from .models import ArmyShop, Course
 # Create your views here.
 def main(request):
     return HttpResponse('<u>Main</u>')
@@ -27,3 +27,10 @@ def show(request):
     # return HttpResponse(result)
     return render(request, 'secondapp/show.html',
     {'data' : course})
+
+def army_shop(request):
+    shops = ArmyShop.objects.all()
+
+    return render(request, 
+    'secondapp/army_shop.html',
+    {'data': shops})
