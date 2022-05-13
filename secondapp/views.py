@@ -41,10 +41,20 @@ def army_shop(request):
     'secondapp/army_shop.html',
     {'data': shops})
 
+
 def army_shop2(request, year, month):
+
+
+
     shops = ArmyShop.objects.filter(year=year,
     month=month)
 
     return render(request, 
     'secondapp/army_shop.html',
     {'data': shops})
+
+
+def show_ajax(request):
+    return render(request,
+     'secondapp/show_ajax.html',
+     {} )
