@@ -42,3 +42,21 @@ def show(request):
    # return HttpResponse(result)
    return render(request, 'firstapp/show.html', 
    {'data': curriculum})
+
+
+def req_get(request):
+    a = request.GET.get('a')
+    b = request.GET.get('b')
+    c = request.GET['c']    # 대괄호는 값이 없으면 바로 에러 처리를 함
+    result = '%s %s %s' % (a, b, c)
+    return HttpResponse(result)
+
+
+def req_post(request):
+    if request.method == 'POST':
+        a = request.POST.get('a')
+        b = request.POST.get('b')
+        c = request.POST['c']
+        result = '%s %s %s' % (a, b, c)
+        return HttpResponse(result)
+    return render(request, 'firstapp/post.html')
