@@ -29,7 +29,21 @@ def show(request):
     {'data' : course})
 
 def army_shop(request):
-    shops = ArmyShop.objects.all()
+    # shops = ArmyShop.objects.all()    query param을 위해 주석처리했음
+    
+    #             GET['prd']
+    prd = request.GET.get('prd')
+    if not prd:       # prd에 값이 없을 경우 , 작동하려면 if not 이 되어야 함
+        prd = ''
+    shops = ArmyShop.objects.filter(name__contains=prd)
+            # 검색 할 땐 __contains로 하는 것이 가장 좋음
+    return render(request, 
+    'secondapp/army_shop.html',
+    {'data': shops})
+
+def army_shop2(request, year, month):
+    shops = ArmyShop.objects.filter(year=year,
+    month=month)
 
     return render(request, 
     'secondapp/army_shop.html',

@@ -98,7 +98,7 @@ class Emp(models.Model):
     ename = models.CharField(max_length=10, null = True)
     job = models.CharField(max_length=9, null = True)
     mgr = models.IntegerField(max_length=11, null = True)
-    hiredate = datetime(null = True)
+    hiredate =  models.DateTimeField(null = True)
     sal = models.IntegerField(max_length=11, null= True)
     comm = models.IntegerField(max_length=11, null = True)
     deptno = models.ForeignKey(    
