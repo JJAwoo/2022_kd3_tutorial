@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-u3clmw!5lr=gw=ot-#zdzz4*(87b#u0t^ya$nwbk9ptug-vy(h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']   # 모든 도메인에서 실행 가능 상태
 
 
 # Application definition
