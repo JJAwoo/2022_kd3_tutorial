@@ -51,3 +51,11 @@ def owner(request):
     return render(request, 'thirdapp/post.html')
 
 
+def hospital(request):
+    hospitals = Hospital.objects.all()
+    return render(
+        request,
+        'thirdapp/hospital.html',
+        {'hospitals': hospitals}
+    )
+
